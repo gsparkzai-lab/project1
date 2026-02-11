@@ -1,12 +1,35 @@
 {
+    "buildCommand": null,
+    "outputDirectory": "dist",
+    "framework": "static",
     "rewrites": [
         {
-            "source": "/(api|static|favicon.ico|_next|__next|.*\\.js|.*\\.css|.*\\.png|.*\\.jpg|.*\\.svg|.*\\.json|.*\\.txt)",
+            "source": "/(api|static|favicon.ico|_next|__next|.*\\.js|.*\\.css|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.svg|.*\\.json|.*\\.txt|.*\\.wasm)",
             "destination": "/$1"
         },
         {
             "source": "/(.*)",
             "destination": "/index.html"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/.*",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/index.html",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=3600, must-revalidate"
+                }
+            ]
         }
     ]
 }

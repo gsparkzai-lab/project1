@@ -1,8 +1,7 @@
 {
-    
     "buildCommand": null,
     "outputDirectory": "dist",
-     "rewrites": [
+    "rewrites": [
         {
             "source": "/(api|static|favicon.ico|_next|__next|.*\\.js|.*\\.css|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.svg|.*\\.json|.*\\.txt|.*\\.wasm)",
             "destination": "/$1"
@@ -31,7 +30,5 @@
                 }
             ]
         }
-
     ]
-    
 }
